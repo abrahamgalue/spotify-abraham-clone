@@ -1,0 +1,58 @@
+---
+import type { Playlist } from '@/lib/data'
+// import { CardPlayButton } from './CardPlayButton'
+
+interface Props {
+  playlist: Playlist
+}
+
+const { playlist } = Astro.props
+const { id, cover, title, artists, color } = playlist
+
+const artistsString = artists.join(', ')
+---
+
+<article
+  class='group relative hover:bg-[#282828] shadow-lg hover:shadow-xl bg-[#171717] rounded-md ransi transition-all duration-300 h-[266px]'
+>
+  <div
+    class=`absolute right-4 bottom-20 translate-y-4
+    transition-all duration-500 opacity-0
+    group-hover:translate-y-0 group-hover:opacity-100
+    z-10
+  `
+  >
+    <!-- <CardPlayButton id={id} client:visible /> -->
+  </div>
+
+  <a
+    href={`/playlist/${id}`}
+    class='playlist-item transition-all duration-300 flex relative p-4 overflow-hidden gap-2 pb-6 rounded-md w-44 flex-col'
+    transition:name=`playlist ${id} box`
+  >
+    <picture class='aspect-square w-full h-auto flex-none shadow-md'>
+      <img
+        src={cover}
+        alt={`Cover of ${title} by ${artistsString}`}
+        class='object-cover w-full h-full rounded-md shadow-lg'
+        transition:name=`playlist ${id} image`
+      />
+    </picture>
+
+    <div class='flex flex-col'>
+      <h4
+        class='text-white text-base font-bold pt-2 truncate'
+        transition:name=`playlist ${id} title`
+      >
+        {title}
+      </h4>
+
+      <span
+        class='text-sm text-[#b3b3b3] [word-break: wrap] overflow-ellipsis'
+        transition:name=`playlist ${id} artists`
+      >
+        {artistsString}
+      </span>
+    </div>
+  </a>
+</article>
