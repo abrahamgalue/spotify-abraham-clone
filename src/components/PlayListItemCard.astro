@@ -1,6 +1,6 @@
 ---
 import type { Playlist } from '@/lib/data'
-// import { CardPlayButton } from './CardPlayButton'
+import { CardPlayButton } from './CardPlayButton'
 
 interface Props {
   playlist: Playlist
@@ -16,12 +16,20 @@ const artistsString = artists.join(', ')
   class='group relative hover:bg-[#282828] shadow-lg hover:shadow-xl bg-[#171717] rounded-md ransi transition-all duration-300 max-h-[266px]'
 >
   <div
-    class='absolute right-4 bottom-20 translate-y-4
-    transition-all duration-500 opacity-0
-    group-hover:translate-y-0 group-hover:opacity-100
-    z-10'
+    class=`
+    absolute
+    right-5
+    bottom-20
+    translate-y-4
+    transition-all
+    duration-500
+    opacity-0
+    md:group-hover:-translate-y-2
+    lg:group-hover:-translate-y-8
+    group-hover:opacity-100
+    z-10`
   >
-    <!-- <CardPlayButton id={id} client:visible /> -->
+    <CardPlayButton id={id} client:visible />
   </div>
 
   <a
@@ -47,7 +55,7 @@ const artistsString = artists.join(', ')
       </h4>
 
       <span
-        class='text-sm text-[#b3b3b3] [word-break: wrap] overflow-ellipsis'
+        class='text-sm text-[#b3b3b3] truncate'
         transition:name=`playlist ${id} artists`
       >
         {artistsString}
