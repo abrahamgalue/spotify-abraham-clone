@@ -10,13 +10,13 @@ const { id } = Astro.params
 const playlist = allPlaylists.find(playlist => playlist.id === id)
 const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
 
-export function getStaticPaths() {
-  return allPlaylists.map(playlist => ({
-    params: {
-      id: playlist.id,
-    },
-  }))
-}
+// export function getStaticPaths() {
+//   return allPlaylists.map(playlist => ({
+//     params: {
+//       id: playlist.id,
+//     },
+//   }))
+// }
 ---
 
 <Layout title={`${playlist?.title} | Spotify`}>
