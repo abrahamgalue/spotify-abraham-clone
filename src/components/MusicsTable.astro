@@ -1,0 +1,64 @@
+---
+import Time from '@/icons/Time.astro'
+import { type Song } from '@/lib/data'
+
+interface Props {
+  songs: Song[]
+}
+
+const { songs } = Astro.props
+---
+
+<table class='table-auto text-left min-w-full divide-y divide-gray-500/20'>
+  <thead>
+    <tr class='text-[#a7a7a7] text-sm select-none'>
+      <th class='px-4 py-2 font-medium pr-0'
+        ><span class='hover:text-white'>#</span></th
+      >
+      <th class='px-4 py-2 font-medium'
+        ><span class='hover:text-white'>Title</span></th
+      >
+      <th class='px-4 py-2 font-medium'
+        ><span class='hover:text-white'>Album</span></th
+      >
+      <th class='px-4 py-2 font-medium pl-4'
+        ><span class='hover:text-white' title='Duration'>
+          <Time />
+        </span></th
+      >
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class='h-[16px]'></tr>
+    {
+      songs.map((song, index) => (
+        <tr class='border-spacing-0 text-[#a7a7a7] text-sm font-normal select-none hover:bg-white/10 hover:text-white overflow-hidden'>
+          <td class='px-4 py-2 rounded-tl rounded-bl w-5 text-lg pr-0'>
+            {index + 1}
+          </td>
+          <td class='px-4 py-2 flex gap-4'>
+            <picture>
+              <img src={song.image} alt={song.title} class='w-11 h-11' />
+            </picture>
+
+            <div class='flex flex-col'>
+              <h3 class='text-white text-base font-normal'>{song.title}</h3>
+              <a href='#' class='hover:underline'>
+                {song.artists.join(', ')}
+              </a>
+            </div>
+          </td>
+          <td class='px-4 py-2'>
+            <a href='#' class='hover:underline'>
+              {song.album}
+            </a>
+          </td>
+          <td class='px-4 py-2 rounded-tr rounded-br text-[#a7a7a7]'>
+            {song.duration}
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
