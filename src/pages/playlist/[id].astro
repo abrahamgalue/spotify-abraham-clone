@@ -1,8 +1,8 @@
 ---
-import type { GetStaticPaths } from 'astro'
-// import MusicsTable from '@/components/MusicsTable.astro'
+// import type { GetStaticPaths } from 'astro'
+import MusicsTable from '@/components/MusicsTable.astro'
 import Layout from '../../layouts/Layout.astro'
-// import { CardPlayButton } from '@/components/CardPlayButton'
+import { CardPlayButton } from '@/components/CardPlayButton'
 import { allPlaylists, songs } from '@/lib/data'
 
 const { id } = Astro.params
@@ -39,7 +39,7 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
         />
       </picture>
 
-      <div class='flex flex-col justify-between'>
+      <div class='flex flex-col justify-between select-none'>
         <h2 class='flex flex-1 items-end font-thin'>Playlist</h2>
         <div>
           <h1
@@ -56,8 +56,7 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
               <span>{playlist?.artists.join(', ')}</span>
             </div>
             <p class='mt-1 text-[#919191]'>
-              <span class='text-white'>{playListSongs.length} canciones</span>,
-              3 h aproximadamente
+              <span class='text-white'>{playListSongs.length} songs</span>, 3 h
             </p>
           </div>
         </div>
@@ -65,10 +64,10 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
     </header>
 
     <div class='pl-6 pt-6'>
-      <!-- <CardPlayButton client:load id={id} size="large" /> -->
+      <CardPlayButton client:load id={id} size='large' />
     </div>
 
-    <div class='relative z-10 px-6 pt-10'></div>
+    <!-- <div class='relative z-10 px-6 pt-10'></div> -->
 
     <div
       class='absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 -z-[1]'
@@ -76,7 +75,7 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
     </div>
 
     <section class='p-6'>
-      <!-- <MusicsTable songs={playListSongs} /> -->
+      <MusicsTable songs={playListSongs} />
     </section>
   </div>
 </Layout>
