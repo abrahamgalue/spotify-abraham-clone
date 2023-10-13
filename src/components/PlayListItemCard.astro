@@ -13,19 +13,17 @@ const artistsString = artists.join(', ')
 ---
 
 <article
-  class='group relative hover:bg-[#282828] shadow-lg hover:shadow-xl bg-[#171717] rounded-md ransi transition-all duration-300 max-h-[266px]'
+  class='group relative hover:bg-[#282828] shadow-xs hover:shadow-xl bg-[#171717] rounded-lg ransi transition-all duration-300 max-h-[266px]'
 >
   <div
     class=`
     absolute
-    right-5
-    bottom-20
-    translate-y-4
+    right-6
+    bottom-20  
     transition-all
     duration-500
     opacity-0
-    md:group-hover:-translate-y-2
-    lg:group-hover:-translate-y-8
+    group-hover:-translate-y-3
     group-hover:opacity-100
     z-10`
   >
@@ -34,14 +32,14 @@ const artistsString = artists.join(', ')
 
   <a
     href={`/playlist/${id}`}
-    class='playlist-item bg-red-600transition-all duration-300 flex relative p-4 overflow-hidden gap-2 pb-6 rounded-md md:w-40 lg:w-44 flex-col'
+    class='playlist-item transition-all duration-300 flex relative p-4 overflow-hidden gap-2 pb-6 rounded-lg md:w-40 lg:w-44 flex-col'
     transition:name=`playlist ${id} box`
   >
-    <picture class='aspect-square w-full h-auto flex-none shadow-md'>
+    <picture class='aspect-square w-full h-auto flex-none shadow-lg'>
       <img
         src={cover}
         alt={`Cover of ${title} by ${artistsString}`}
-        class='object-cover w-full h-full rounded-md shadow-lg'
+        class='object-cover w-full h-full rounded-lg shadow-xl'
         transition:name=`playlist ${id} image`
       />
     </picture>
