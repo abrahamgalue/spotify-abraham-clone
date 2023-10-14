@@ -1,5 +1,4 @@
 ---
-// import type { GetStaticPaths } from 'astro'
 import MusicsTable from '@/components/MusicsTable.astro'
 import Layout from '../../layouts/Layout.astro'
 import { CardPlayButton } from '@/components/CardPlayButton'
@@ -9,20 +8,12 @@ const { id } = Astro.params
 
 const playlist = allPlaylists.find(playlist => playlist.id === id)
 const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
-
-// export function getStaticPaths() {
-//   return allPlaylists.map(playlist => ({
-//     params: {
-//       id: playlist.id,
-//     },
-//   }))
-// }
 ---
 
-<Layout title={`${playlist?.title} | Spotify`}>
+<Layout title={`${playlist?.title} | Spotify`} client:visible>
   <div
     id='playlist-container'
-    class='relative flex flex-col h-full bg-[#121212] overflow-x-hidden'
+    class=`relative flex flex-col bg-[${playlist?.color.accent}] overflow-x-hidden`
     transition:name=`playlist ${id} box`
   >
     <!-- <PageHeader /> -->
@@ -40,7 +31,7 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
       </picture>
 
       <div class='flex flex-col justify-between select-none'>
-        <h2 class='flex flex-1 items-end font-thin'>Playlist</h2>
+        <h2 class='flex flex-1 items-end'>Playlist</h2>
         <div>
           <h1
             class='xl:text-8xl lg:text-6xl sm:text-2xl md:text-4xl font-bold block text-white pt-2'
@@ -55,7 +46,7 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
             <div transition:name=`playlist ${playlist?.id} artists`>
               <span>{playlist?.artists.join(', ')}</span>
             </div>
-            <p class='mt-1 text-[#919191]'>
+            <p class='mt-1 text-neutral-300'>
               <span class='text-white'>{playListSongs.length} songs</span>, 3 h
             </p>
           </div>
@@ -70,7 +61,7 @@ const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
     <!-- <div class='relative z-10 px-6 pt-10'></div> -->
 
     <div
-      class='absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 -z-[1]'
+      class='absolute inset-0 bg-gradient-to-t from-[#121212] via-[#121212]/75 -z-[1]'
     >
     </div>
 
