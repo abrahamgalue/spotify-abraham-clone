@@ -8,12 +8,13 @@ const { id } = Astro.params
 
 const playlist = allPlaylists.find(playlist => playlist.id === id)
 const playListSongs = songs.filter(song => song.albumId === playlist?.albumId)
+const color = playlist?.color.accent
 ---
 
-<Layout title={`${playlist?.title} | Spotify`} client:visible>
+<Layout title={`${playlist?.title} | Spotify`}>
   <div
     id='playlist-container'
-    class=`relative flex flex-col bg-[${playlist?.color.accent}] overflow-x-hidden`
+    class=`relative flex flex-col overflow-x-hidden bg-[${color}]`
     transition:name=`playlist ${id} box`
   >
     <!-- <PageHeader /> -->
