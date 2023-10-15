@@ -1,54 +1,32 @@
-# Astro Starter Kit: Basics
+<div align="center">
+  
+# 🎵 Astro - Spotify Clone
 
-```sh
-npm create astro@latest -- --template basics
-```
+</div>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### Clon parcial del sitio web de Spotify
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> 🧩 Aquí puedes ver su [**Live Demo.**]()
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+![vista-previa](./public/preview/)
 
-## 🚀 Project Structure
+## 🚀 Descripción
 
-Inside of your Astro project, you'll see the following folders and files:
+Este es un clon parcial del sitio web de **Spotify**, construido con el framework de **Astro.**
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Astro es un framework de desarrollo web moderno que ofrece un rendimiento increíblemente rápido, y es agnóstico a las tecnologías que usa.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+El proyecto permite reproducir, controlar el volumen y cambiar el tiempo de las músicas.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🎭 Tecnologías
 
-Any static assets, like images, can be placed in the `public/` directory.
+El proyecto utiliza las siguientes tecnologías:
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [**Rutas dinámicas**](https://docs.astro.build/en/core-concepts/routing/#dynamic-routes) para crear las páginas de las playlist.
+- Las [**ViewTransitions**](https://docs.astro.build/en/guides/view-transitions/) de Astro para crear animaciones entre páginas.
+- [**Tailwind CSS**](https://tailwindcss.com/) para aplicar los estilos.
+- **TypeScript** para almacenar los datos de las canciones y playlists.
+- Componentes de **React** con Hooks.
+- Componente [**Svelte**](https://svelte.dev/) para el sáludo dinámico, dependiendo del momento del día.
+- Componente Slider de [**shadcn/ui**](https://ui.shadcn.com/docs/components/slider) para el volumen y la barra de reproducion.
+- [**Vercel**](https://vercel.com) como adaptador para el SSR.
