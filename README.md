@@ -8,7 +8,7 @@
 
 > 🧩 Aquí puedes ver su [**Live Demo.**]()
 
-![vista-previa](./public/preview/)
+![vista-previa](./public/preview/01-page-preview.jpg)
 
 ## 🚀 Descripción
 
