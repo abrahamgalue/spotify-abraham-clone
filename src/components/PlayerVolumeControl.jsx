@@ -24,6 +24,7 @@ export const PlayerVolumeControl = () => {
       <button
         className='opacity-70 hover:opacity-100 transition'
         onClick={handleClickVolumen}
+        title={isVolumeSilenced ? 'Unmute' : 'Mute'}
       >
         <PlayerVolumeIconComponent />
       </button>
