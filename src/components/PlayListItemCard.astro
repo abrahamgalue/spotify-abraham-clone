@@ -13,7 +13,7 @@ const artistsString = artists.join(', ')
 ---
 
 <article
-  class='group relative hover:bg-[#282828] shadow-xs hover:shadow-xl bg-[#171717] rounded-lg ransi transition-all duration-300 max-h-[266px]'
+  class='group relative hover:bg-card-secondary shadow-xs hover:shadow-xl bg-card-primary rounded-lg ransi transition-all duration-300 max-h-[266px]'
 >
   <div
     class=`
@@ -53,7 +53,7 @@ const artistsString = artists.join(', ')
       </h4>
 
       <span
-        class='text-sm text-[#b3b3b3] truncate'
+        class='text-sm text-secondary truncate'
         transition:name=`playlist ${id} artists`
       >
         {artistsString}

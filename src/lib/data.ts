@@ -96,7 +96,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '3:12',
+    duration: '2:57',
   },
   {
     id: 2,
@@ -105,7 +105,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '4:07',
+    duration: '3:40',
   },
   {
     id: 3,
@@ -114,7 +114,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '3:50',
+    duration: '3:29',
   },
   {
     id: 4,
@@ -123,7 +123,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '3:30',
+    duration: '2:11',
   },
   {
     id: 5,
@@ -132,7 +132,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '4:20',
+    duration: '2:26',
   },
   {
     id: 1,
@@ -141,7 +141,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
     artists: ['Urban Nocturne'],
     album: 'Midnight Tales',
-    duration: '3:40',
+    duration: '2:38',
   },
   {
     id: 2,
@@ -150,7 +150,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
     artists: ['Urban Nocturne'],
     album: 'Midnight Tales',
-    duration: '3:20',
+    duration: '2:40',
   },
   {
     id: 3,
@@ -159,7 +159,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
     artists: ['Urban Nocturne'],
     album: 'Midnight Tales',
-    duration: '3:50',
+    duration: '2:53',
   },
   {
     id: 4,
@@ -168,7 +168,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
     artists: ['Urban Nocturne'],
     album: 'Midnight Tales',
-    duration: '3:30',
+    duration: '3:11',
   },
   {
     id: 5,
@@ -177,7 +177,7 @@ export const songs: Song[] = [
     image: `https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187`,
     artists: ['Urban Nocturne'],
     album: 'Midnight Tales',
-    duration: '4:20',
+    duration: '2:58',
   },
   {
     id: 1,
@@ -186,7 +186,7 @@ export const songs: Song[] = [
     image: `https://f4.bcbits.com/img/a1435058381_65.jpg`,
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '3:40',
+    duration: '3:06',
   },
   {
     id: 2,
@@ -195,7 +195,7 @@ export const songs: Song[] = [
     image: `https://f4.bcbits.com/img/a1435058381_65.jpg`,
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '3:20',
+    duration: '1:30',
   },
   {
     id: 3,
@@ -204,7 +204,7 @@ export const songs: Song[] = [
     image: `https://f4.bcbits.com/img/a1435058381_65.jpg`,
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '2:40',
+    duration: '1:59',
   },
   {
     id: 4,
@@ -213,7 +213,7 @@ export const songs: Song[] = [
     image: `https://f4.bcbits.com/img/a1435058381_65.jpg`,
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '3:10',
+    duration: '3:56',
   },
   {
     id: 5,
@@ -222,7 +222,7 @@ export const songs: Song[] = [
     image: `https://f4.bcbits.com/img/a1435058381_65.jpg`,
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '2:10',
+    duration: '2:30',
   },
   {
     id: 1,
@@ -231,7 +231,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a1962013209_16.jpg',
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '3:40',
+    duration: '2:59',
   },
   {
     id: 2,
@@ -240,7 +240,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a1962013209_16.jpg',
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '3:20',
+    duration: '2:12',
   },
   {
     id: 3,
@@ -249,7 +249,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a1962013209_16.jpg',
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '2:40',
+    duration: '3:02',
   },
   {
     id: 4,
@@ -258,7 +258,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a1962013209_16.jpg',
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '3:10',
+    duration: '2:29',
   },
   {
     id: 5,
@@ -267,7 +267,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a1962013209_16.jpg',
     artists: ['Tenno'],
     album: 'Study Session',
-    duration: '2:10',
+    duration: '2:29',
   },
   {
     id: 1,
@@ -276,7 +276,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a2793859494_16.jpg',
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '3:12',
+    duration: '3:49',
   },
   {
     id: 2,
@@ -285,7 +285,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a2793859494_16.jpg',
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '4:07',
+    duration: '1:52',
   },
   {
     id: 3,
@@ -294,7 +294,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a2793859494_16.jpg',
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '3:50',
+    duration: '2:15',
   },
   {
     id: 4,
@@ -303,7 +303,7 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a2793859494_16.jpg',
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '3:30',
+    duration: '4:06',
   },
   {
     id: 5,
@@ -312,51 +312,6 @@ export const songs: Song[] = [
     image: 'https://f4.bcbits.com/img/a2793859494_16.jpg',
     artists: ['LoFi Dreamer'],
     album: 'Chill Lo-Fi Music',
-    duration: '4:20',
-  },
-  {
-    id: 1,
-    albumId: 6,
-    title: 'Silent Rain',
-    image: 'https://f4.bcbits.com/img/a0363730459_16.jpg',
-    artists: ['Urban Nocturne'],
-    album: 'Midnight Tales',
-    duration: '1:57',
-  },
-  {
-    id: 2,
-    albumId: 6,
-    title: 'Lost Pages',
-    image: 'https://f4.bcbits.com/img/a0363730459_16.jpg',
-    artists: ['Urban Nocturne'],
-    album: 'Midnight Tales',
-    duration: '1:49',
-  },
-  {
-    id: 3,
-    albumId: 6,
-    title: 'Midnight Tales',
-    image: 'https://f4.bcbits.com/img/a0363730459_16.jpg',
-    artists: ['Urban Nocturne'],
-    album: 'Midnight Tales',
-    duration: '2:35',
-  },
-  {
-    id: 4,
-    albumId: 6,
-    title: 'City Lights',
-    image: 'https://f4.bcbits.com/img/a0363730459_16.jpg',
-    artists: ['Urban Nocturne'],
-    album: 'Midnight Tales',
-    duration: '2:49',
-  },
-  {
-    id: 5,
-    albumId: 6,
-    title: 'Night Drive',
-    image: 'https://f4.bcbits.com/img/a0363730459_16.jpg',
-    artists: ['Urban Nocturne'],
-    album: 'Midnight Tales',
-    duration: '2:29',
+    duration: '2:54',
   },
 ]

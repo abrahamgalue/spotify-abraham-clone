@@ -28,7 +28,7 @@ const { title } = Astro.props
       </aside>
 
       <main
-        class='[grid-area:main] rounded-lg bg-[#121212] overflow-y-auto w-full'
+        class='[grid-area:main] rounded-lg bg-secondary-bg overflow-y-auto w-full'
       >
         <slot />
       </main>
@@ -49,6 +49,21 @@ const { title } = Astro.props
     </style>
 
     <style is:global>
+      :root {
+        --color-primary: #ffffff;
+        --color-secondary: #b3b3b3;
+        --color-tertiary: #919191;
+        --color-bg-secondary: #121212;
+        --color-bg-slider: #4d4d4d;
+        --color-green-primary: #1ed760;
+        --color-green-secondary: #1fdf64;
+        --color-green-slider: #1db954;
+        --color-table-text: #a7a7a7;
+        --color-card-primary: #171717;
+        --color-card-secondary: #282828;
+        --color-card-tertiary: #1a1a1a;
+      }
+
       html {
         font-family: 'CircularStd', system-ui, sans-serif;
         src: url('/fonts/CircularStd-Medium.woff2') format('woff2');

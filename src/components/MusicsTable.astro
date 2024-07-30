@@ -11,7 +11,7 @@ const { songs } = Astro.props
 
 <table class='table-auto text-left min-w-full divide-y divide-gray-500/20'>
   <thead>
-    <tr class='text-[#a7a7a7] text-sm select-none'>
+    <tr class='text-table-text text-sm select-none'>
       <th class='px-4 py-2 font-medium pr-0'
         ><span class='hover:text-white'>#</span></th
       >
@@ -33,7 +33,7 @@ const { songs } = Astro.props
     <tr class='h-[16px]'></tr>
     {
       songs.map((song, index) => (
-        <tr class='border-spacing-0 text-[#a7a7a7] text-sm font-normal select-none hover:bg-white/10 hover:text-white overflow-hidden'>
+        <tr class='border-spacing-0 text-table-text text-sm font-normal select-none hover:bg-white/10 hover:text-white overflow-hidden'>
           <td class='px-4 py-2 rounded-tl rounded-bl w-5 text-lg pr-0'>
             {index + 1}
           </td>
@@ -54,7 +54,7 @@ const { songs } = Astro.props
               {song.album}
             </a>
           </td>
-          <td class='px-4 py-2 rounded-tr rounded-br text-[#a7a7a7]'>
+          <td class='px-4 py-2 rounded-tr rounded-br text-table-text'>
             {song.duration}
           </td>
         </tr>

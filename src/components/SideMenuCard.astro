@@ -13,7 +13,7 @@ const artistsString = artists.join(', ')
 
 <a
   href={`/playlist/${id}`}
-  class='playlist-item flex relative p-2 overflow-hidden items-center gap-2 rounded-md hover:bg-[#1a1a1a]'
+  class='playlist-item flex relative p-2 overflow-hidden items-center gap-2 rounded-md hover:bg-card-tertiary'
 >
   <picture class='h-12 w-12 flex-none'>
     <img
@@ -28,7 +28,7 @@ const artistsString = artists.join(', ')
       {title}
     </h4>
 
-    <span class='text-sm text-[#919191]'>
+    <span class='text-sm text-tertiary'>
       {artistsString}
     </span>
   </div>

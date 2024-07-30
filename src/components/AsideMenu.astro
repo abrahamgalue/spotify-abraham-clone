@@ -9,25 +9,25 @@ import { playlists } from '@/lib/data'
 ---
 
 <nav class='flex flex-col flex-1 gap-2 overflow-y-auto'>
-  <div class='bg-[#121212] rounded-lg p-2'>
+  <div class='bg-secondary-bg rounded-lg p-2'>
     <ul>
       <SideMenuItem href='/'>
         <HomeIcon />
-         Home
+        Home
       </SideMenuItem>
 
       <SideMenuItem href='/#'>
         <SearchIcon />
-         Search
+        Search
       </SideMenuItem>
     </ul>
   </div>
 
-  <div class='bg-[#121212] rounded-lg p-2 flex-1'>
+  <div class='bg-secondary-bg rounded-lg p-2 flex-1'>
     <ul>
       <SideMenuItem href='/'>
         <LibraryIcons />
-         Your Library
+        Your Library
       </SideMenuItem>
 
       {playlists.map(playlist => <SideMenuCard playlist={playlist} />)}

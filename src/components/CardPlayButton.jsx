@@ -1,34 +1,36 @@
-import { Pause, Play } from './Player'
 import { usePlayerStore } from '@/store/playerStore'
+import { getPlayListInfoById } from '@/services/ApiService'
+import { Pause, Play } from '@/icons/PlayerIcons'
 
 export function CardPlayButton({ id, size = 'small' }) {
   const { currentMusic, isPlaying, setIsPlaying, setCurrentMusic } =
     usePlayerStore(state => state)
 
-  const isPlayingPlaylist = isPlaying && currentMusic?.playlist.id === id
+  const isPlayingPlaylist = isPlaying && currentMusic?.playlist?.id === id
+  const isThisPlaylistInStore = currentMusic?.playlist?.id === id
 
   const handleClick = () => {
-    if (isPlayingPlaylist) {
-      setIsPlaying(false)
+    if (isThisPlaylistInStore) {
+      setIsPlaying(!isPlaying)
       return
     }
 
-    fetch(`/api/get-info-playlist.json?id=${id}`)
-      .then(res => res.json())
+    getPlayListInfoById(id)
       .then(data => {
         const { songs, playlist } = data
-
+        setCurrentMusic({ songs: songs, playlist: playlist, song: songs[0] })
+      })
+      .then(() => {
         setIsPlaying(true)
-        setCurrentMusic({ songs, playlist, song: songs[0] })
       })
   }
 
-  const iconClassName = size === 'small' ? 'w-4 h-4' : 'w-6 h-6'
+  const iconClassName = size === 'small' ? 'w-4 h-4' : 'w-5 h-5'
 
   return (
     <button
       onClick={handleClick}
-      className='card-play-button rounded-full bg-[#1ed760] hover:bg-[#1fdf64] p-4 hover:scale-105 transition shadow-md'
+      className='card-play-button rounded-full text-black bg-green-500 p-4 hover:scale-105 transition hover:bg-green-400'
     >
       {isPlayingPlaylist ? (
         <Pause className={iconClassName} />
