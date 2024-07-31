@@ -28,12 +28,12 @@ const { title } = Astro.props
       </aside>
 
       <main
-        class='[grid-area:main] rounded-lg bg-secondary-bg overflow-y-auto w-full'
+        class='[grid-area:main] rounded-lg bg-secondary-bg overflow-y-auto w-full overflow-x-hidden'
       >
         <slot />
       </main>
 
-      <footer class='[grid-area:player] h-[89px]'>
+      <footer class='[grid-area:player] h-[89px] scroll-m-0 overflow-x-hidden'>
         <Player client:load transition:name='media-player' transition:persist />
       </footer>
     </div>
@@ -114,8 +114,15 @@ const { title } = Astro.props
       }
 
       *::-webkit-scrollbar {
-        width: none; /* width of the entire scrollbar */
-        display: none;
+        width: 12px;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background-color: #575757;
+      }
+
+      *::-webkit-scrollbar-thumb:hover {
+        background-color: #878787;
       }
     </style>
   </body>
