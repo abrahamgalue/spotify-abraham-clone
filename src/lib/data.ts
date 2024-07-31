@@ -1,7 +1,7 @@
 import { colors } from './colors'
 
 export interface Playlist {
-  id: string
+  id: string | number
   albumId: number
   title: string
   color: (typeof colors)[keyof typeof colors]

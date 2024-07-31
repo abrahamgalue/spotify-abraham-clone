@@ -5,6 +5,7 @@ import { PlayerVolumeControl } from '@/components/PlayerVolumeControl'
 import { useCurrentMusic } from '@/hooks/useCurrentMusic'
 import { useEffect, useRef } from 'react'
 import { usePlayerStore } from '@/store/playerStore'
+import FullscreenButton from './FullscreenMutton'
 
 export function Player() {
   const { currentMusic, isPlaying, volume, setCurrentMusic } = usePlayerStore(

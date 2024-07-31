@@ -2,6 +2,7 @@ import { usePlayerStore } from '@/store/playerStore'
 import { useRef } from 'react'
 import { Slider } from '@/components/Slider'
 import { PlayerVolumeIconComponent } from '@/components/PlayerVolumeIconComponent'
+import FullscreenButton from './FullscreenMutton'
 
 export const PlayerVolumeControl = () => {
   const volume = usePlayerStore(state => state.volume)
@@ -41,6 +42,7 @@ export const PlayerVolumeControl = () => {
           setVolume(volumeValue)
         }}
       />
+      <FullscreenButton />
     </div>
   )
 }

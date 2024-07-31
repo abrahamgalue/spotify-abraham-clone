@@ -1,4 +1,4 @@
-import type { CurrentMusic } from '@/store/playerStore'
+import type { CurrentMusic } from '@/store/playerStore.ts'
 import type { Song } from '@/lib/data.ts'
 
 export function useCurrentMusic(currentMusic: CurrentMusic) {
