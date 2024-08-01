@@ -5,7 +5,6 @@ import { PlayerVolumeControl } from '@/components/PlayerVolumeControl'
 import { useCurrentMusic } from '@/hooks/useCurrentMusic'
 import { useEffect, useRef } from 'react'
 import { usePlayerStore } from '@/store/playerStore'
-import FullscreenButton from './FullscreenMutton'
 
 export function Player() {
   const { currentMusic, isPlaying, volume, setCurrentMusic } = usePlayerStore(
@@ -46,11 +45,11 @@ export function Player() {
 
   return (
     <div className='flex flex-row justify-between w-full px-1 py-3 z-50'>
-      <div className='w-[200px]'>
+      <div className='flex-[2]'>
         <PlayerCurrentSong {...currentMusic.song} />
       </div>
 
-      <div className='grid place-content-center gap-4 flex-1'>
+      <div className='grid place-content-center gap-4 flex-[1]'>
         <div className='flex justify-center flex-col items-center'>
           <PlayerControlButtonBar />
           <PlayerSoundControl audio={audioRef} />
@@ -58,7 +57,7 @@ export function Player() {
         </div>
       </div>
 
-      <div className='grid place-content-center'>
+      <div className='flex justify-end items-center flex-[2]'>
         <PlayerVolumeControl />
       </div>
     </div>
