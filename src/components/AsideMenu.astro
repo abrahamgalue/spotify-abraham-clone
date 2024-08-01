@@ -1,11 +1,20 @@
 ---
-import LibraryIcons from '@/icons/Library.astro'
-import HomeIcon from '@/icons/Home.astro'
-import SearchIcon from '@/icons/Search.astro'
 import SideMenuItem from './SideMenuItem.astro'
+import HomeIcon from '@/icons/Home.astro'
+import Search from '@/icons/Search.astro'
+import SearchEmpty from '@/icons/SearchEmpty.astro'
+import SideLibraryItem from './SideLibraryItem.astro'
+import LibraryItem from './LibraryItem.astro'
+import RoundedBtn from './RoundedBtn.astro'
+import More from '@/icons/More.astro'
+import SideMenuFilters from './SideMenuFilters.astro'
+import SideMenuSearch from './SideMenuSearch.astro'
+import RecentItem from './RecentItem.astro'
 import SideMenuCard from './SideMenuCard.astro'
 
 import { playlists } from '@/lib/data'
+
+const currentURL = Astro.url.searchParams.get('q')
 ---
 
 <nav class='flex flex-col flex-1 gap-2 overflow-y-auto'>
@@ -16,8 +25,14 @@ import { playlists } from '@/lib/data'
         Home
       </SideMenuItem>
 
-      <SideMenuItem href='/#'>
-        <SearchIcon />
+      <SideMenuItem href='/?q=search'>
+        {
+          currentURL !== null ? (
+            <SearchEmpty />
+          ) : (
+            <Search width='24' height='24' />
+          )
+        }
         Search
       </SideMenuItem>
     </ul>
@@ -25,12 +40,41 @@ import { playlists } from '@/lib/data'
 
   <div class='bg-secondary-bg rounded-lg p-2 flex-1'>
     <ul>
-      <SideMenuItem href='/'>
-        <LibraryIcons />
-        Your Library
-      </SideMenuItem>
+      <SideLibraryItem href='/'>
+        <LibraryItem slot='library' />
+        <RoundedBtn title='Create playlist or folder' slot='more-btn'>
+          <More />
+        </RoundedBtn>
+      </SideLibraryItem>
+      <SideMenuFilters>
+        <p slot='playlist'>Playlist</p>
+        <p slot='albums'>Albums</p>
+        <p slot='artists'>Artists</p>
+      </SideMenuFilters>
+
+      <SideMenuSearch>
+        <RoundedBtn title='Search in Your Library'>
+          <Search width='16' height='16' />
+        </RoundedBtn>
+        <RecentItem />
+      </SideMenuSearch>
 
       {playlists.map(playlist => <SideMenuCard playlist={playlist} />)}
     </ul>
   </div>
 </nav>
+
+<style>
+  nav::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    width: 0;
+  }
+
+  nav:hover::-webkit-scrollbar-thumb {
+    background-color: #595959;
+  }
+
+  nav:hover::-webkit-scrollbar-thumb:hover {
+    background-color: #898989;
+  }
+</style>

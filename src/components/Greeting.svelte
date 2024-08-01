@@ -13,4 +13,4 @@
   }
 </script>
 
-<h1 class="text-4xl font-bold select-none">{greeting}</h1>
+<h1 class="text-4xl font-bold">{greeting}</h1>

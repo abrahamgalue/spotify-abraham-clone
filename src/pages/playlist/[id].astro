@@ -19,7 +19,7 @@ const color = playlist?.color.accent
     <!-- <PageHeader /> -->
 
     <header class='flex flex-row gap-8 px-6 mt-12'>
-      <picture class='aspect-square w-52 h-52 flex-none select-none'>
+      <picture class='aspect-square w-52 h-52 flex-none'>
         <img
           src={playlist?.cover}
           alt={`Cover of ${playlist?.title}`}
@@ -32,7 +32,7 @@ const color = playlist?.color.accent
         <h2 class='flex flex-1 items-end'>Playlist</h2>
         <div>
           <h1
-            class='md:text-3xl lg:text-7xl text-2xl font-bold block text-white select-none'
+            class='md:text-3xl lg:text-7xl text-2xl font-bold block text-white'
           >
             <span transition:name=`playlist ${playlist?.id} title`>
               {playlist?.title}

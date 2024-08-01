@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<div title={title} class='flex items-center'>
+  <span
+    class='hover:cursor-pointer text-table-text p-2 transition-colors hover:text-white hover:bg-[#252525] rounded-full active:bg-black'
+  >
+    <slot />
+  </span>
+</div>

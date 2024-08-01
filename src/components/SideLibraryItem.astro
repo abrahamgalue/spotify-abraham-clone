@@ -1,0 +1,20 @@
+---
+interface Props {
+  href?: string
+}
+
+const { href } = Astro.props
+---
+
+<li
+  class='flex items-center justify-between py-2 px-4 text-table-text font-medium'
+>
+  <a
+    title='Collapse Your Library'
+    class='flex gap-4 hover:text-white transition duration-300'
+    href={href}
+  >
+    <slot name='library' />
+  </a>
+  <slot name='more-btn' />
+</li>

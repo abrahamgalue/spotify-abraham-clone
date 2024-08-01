@@ -32,7 +32,7 @@ export const MusicsTable = ({ songs }: Props) => {
   return (
     <table className='table-auto text-left min-w-full divide-y divide-gray-500/20'>
       <thead className=''>
-        <tr className='text-zinc-400 text-sm select-none'>
+        <tr className='text-zinc-400 text-sm'>
           <th className='px-4 py-2'>#</th>
           <th className='px-4 py-2 hover:text-white'>Title</th>
           <th className='px-4 py-2 hover:text-white'>Album</th>
@@ -49,7 +49,7 @@ export const MusicsTable = ({ songs }: Props) => {
           return (
             <tr
               key={`{song.albumId}-${song.id}`}
-              className='select-none hover:text-white border-spacing-0 text-sm hover:bg-white/10 overflow-hidden transition duration-300 group text-zinc-400'
+              className='hover:text-white border-spacing-0 text-sm hover:bg-white/10 overflow-hidden transition duration-300 group text-zinc-400'
             >
               <td className='relative px-4 py-2 rounded-tl-lg rounded-bl-lg w-5'>
                 {!isCurrentSongRunning(song, currentMusic, isPlaying) ? (

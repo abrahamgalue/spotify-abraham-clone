@@ -8,18 +8,20 @@ interface Props {
 const { playlist } = Astro.props
 const { id, cover, title, artists } = playlist
 
-const artistsString = artists.join(', ')
+const artist = artists[0]
+
+const currentId = Astro.url.pathname.split('/playlist/').pop()
 ---
 
 <a
   href={`/playlist/${id}`}
-  class='playlist-item flex relative p-2 overflow-hidden items-center gap-2 rounded-md hover:bg-card-tertiary'
+  class=`playlist-item flex relative p-2 overflow-hidden items-center gap-3 rounded-md hover:bg-[#393939] active:bg-black ${currentId == id ? 'bg-[#232323]' : ''}`
 >
   <picture class='h-12 w-12 flex-none'>
     <img
       src={cover}
-      alt={`Cover of ${title} by ${artistsString}`}
-      class='object-cover w-full h-full rounded-md'
+      alt={`Cover of ${title} by ${artist}`}
+      class='object-cover w-full h-full rounded-sm'
     />
   </picture>
 
@@ -29,7 +31,7 @@ const artistsString = artists.join(', ')
     </h4>
 
     <span class='text-sm text-tertiary'>
-      {artistsString}
+      Album • {artist}
     </span>
   </div>
 </a>
