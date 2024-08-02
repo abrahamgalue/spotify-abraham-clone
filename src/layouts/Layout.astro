@@ -1,6 +1,10 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
 import AsideMenu from '../components/AsideMenu.astro'
+import BackHistory from '@/components/BackHistory.jsx'
+import RoundedBtn from '@/components/RoundedBtn.astro'
+import Bell from '@/icons/Bell.astro'
+import Profile from '@/icons/Profile.astro'
 import { Player } from '@/components/Player'
 
 interface Props {
@@ -28,8 +32,34 @@ const { title } = Astro.props
       </aside>
 
       <main
-        class='[grid-area:main] rounded-lg bg-secondary-bg overflow-y-auto w-full overflow-x-hidden'
+        class='[grid-area:main] relative rounded-lg bg-secondary-bg overflow-y-auto w-full overflow-x-hidden'
       >
+        <header
+          class='h-16 px-6 flex items-center justify-between absolute max-w-[1162px] w-full left-0 top-0 z-20'
+        >
+          <BackHistory client:load transition:name='back-history' />
+          <div class='flex gap-2'>
+            <RoundedBtn
+              activeBgColor=''
+              bgColor='bg-[rgb(0,0,0,0.54)]'
+              disableHover=''
+              scale={true}
+              title="What's New"
+            >
+              <Bell />
+            </RoundedBtn>
+            <RoundedBtn
+              activeBgColor='active:opacity-30 active:scale-100'
+              bgColor='bg-[rgb(0,0,0,0.54)]'
+              disableHover='hover:bg-black'
+              padding='p-[4px]'
+              scale={true}
+              title='Abraham Galué'
+            >
+              <Profile />
+            </RoundedBtn>
+          </div>
+        </header>
         <slot />
       </main>
 
