@@ -1,14 +1,26 @@
 ---
 interface Props {
+  activeBgColor?: string
+  bgColor?: string
+  disableHover?: string
+  padding?: string
+  scale?: boolean
   title: string
 }
 
-const { title } = Astro.props
+const {
+  activeBgColor = 'active:bg-black',
+  bgColor = '',
+  disableHover = 'hover:bg-[#252525]',
+  padding = 'p-2',
+  scale = false,
+  title,
+} = Astro.props
 ---
 
 <div title={title} class='flex items-center'>
   <span
-    class='hover:cursor-pointer text-table-text p-2 transition-colors hover:text-white hover:bg-[#252525] rounded-full active:bg-black'
+    class=`${disableHover} ${scale ? 'hover:scale-110' : ''} hover:cursor-pointer ${bgColor} text-table-text ${padding} transition-colors hover:text-white rounded-full ${activeBgColor}`
   >
     <slot />
   </span>
