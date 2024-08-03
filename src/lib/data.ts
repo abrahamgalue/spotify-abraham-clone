@@ -7,6 +7,10 @@ export interface Playlist {
   color: (typeof colors)[keyof typeof colors]
   cover: string
   artists: string[]
+  duration: string
+  releaseYear: string
+  releaseMonth: string
+  releaseDay: string
 }
 
 export const playlists: Playlist[] = [
@@ -18,6 +22,10 @@ export const playlists: Playlist[] = [
     cover:
       'https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353',
     artists: ['NoSpirit', 'Casiio'],
+    duration: '14 min 43 sec',
+    releaseYear: '2020',
+    releaseMonth: 'November',
+    releaseDay: '26',
   },
   {
     id: '2',
@@ -27,6 +35,10 @@ export const playlists: Playlist[] = [
     cover:
       'https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187',
     artists: ['Kupla', 'Blue Fox'],
+    duration: '14 min 30 sec',
+    releaseYear: '2019',
+    releaseMonth: 'September',
+    releaseDay: '13',
   },
   {
     id: '3',
@@ -35,6 +47,10 @@ export const playlists: Playlist[] = [
     color: colors.rose,
     cover: 'https://f4.bcbits.com/img/a1435058381_65.jpg',
     artists: ['Tenno', 'xander', 'Team Astro'],
+    duration: '13 min 1 sec',
+    releaseYear: '2020',
+    releaseMonth: 'January',
+    releaseDay: '3',
   },
   {
     id: '4',
@@ -43,6 +59,10 @@ export const playlists: Playlist[] = [
     color: colors.blue,
     cover: 'https://f4.bcbits.com/img/a1962013209_16.jpg',
     artists: ['Raimu', 'Yasumu'],
+    duration: '13 min 13 sec',
+    releaseYear: '2022',
+    releaseMonth: 'June',
+    releaseDay: '24',
   },
   {
     id: '5',
@@ -51,6 +71,10 @@ export const playlists: Playlist[] = [
     color: colors.purple,
     cover: 'https://f4.bcbits.com/img/a2793859494_16.jpg',
     artists: ['Chau Saura', 'amies', 'kyu'],
+    duration: '14 min 56 sec',
+    releaseYear: '2021',
+    releaseMonth: 'March',
+    releaseDay: '7',
   },
   {
     id: '6',
@@ -59,6 +83,10 @@ export const playlists: Playlist[] = [
     color: colors.orange,
     cover: 'https://f4.bcbits.com/img/a0363730459_16.jpg',
     artists: ['WFS', 'Nadav Cohen'],
+    duration: '0 sec',
+    releaseYear: '2024',
+    releaseMonth: 'December',
+    releaseDay: '12',
   },
 ]
 
