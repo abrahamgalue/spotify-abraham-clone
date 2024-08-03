@@ -1,3 +1,5 @@
+import ShowLikeIcon from './ShowLikeIcon'
+
 export const PlayerCurrentSong = ({ image, title, artists }) => {
   return (
     <div
@@ -16,6 +18,18 @@ export const PlayerCurrentSong = ({ image, title, artists }) => {
         <h3 className='font-semibold text-sm block'>{title}</h3>
         <span className='text-xs opacity-80'>{artists?.join(', ')}</span>
       </div>
+      {title && (
+        <ShowLikeIcon
+          title={{
+            addText: 'Add to',
+            removeText: 'Remove from',
+            entity: 'Liked Songs',
+          }}
+          width={16}
+          height={16}
+          client:load
+        />
+      )}
     </div>
   )
 }
