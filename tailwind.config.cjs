@@ -16,6 +16,7 @@ module.exports = {
         'card-primary': 'var(--color-card-primary)',
         'card-secondary': 'var(--color-card-secondary)',
         'card-tertiary': 'var(--color-card-tertiary)',
+        'gradient-playlist': 'var(--gradient-playlist)'
       }
     },
   },
