@@ -1,6 +1,20 @@
+---
+interface Props {
+  title?: string
+  isHoverDisable?: boolean
+  isActiveDisable?: boolean
+}
+
+const {
+  title = 'Recents',
+  isHoverDisable = false,
+  isActiveDisable = false,
+} = Astro.props
+---
+
 <span
   role='presentation'
-  class='text-table-text transition-all duration-75 hover:text-white hover:scale-110 active:scale-100 active:text-table-text'
+  class=`text-table-text transition-all duration-75 hover:text-white ${isHoverDisable ? '' : 'hover:scale-110'} ${isActiveDisable ? '' : 'active:scale-100 active:text-table-text'}`
   ><span role='presentation'
     ><button
       class='flex justify-center items-center'
@@ -8,7 +22,7 @@
       aria-controls='sort-and-view-picker'
       aria-label='Recent, List view'
       aria-expanded='false'
-      ><span class='text-sm'>Recents</span><span
+      ><span class='text-sm'>{title}</span><span
         aria-hidden='true'
         class='IconWrapper__Wrapper-sc-16usrgb-0 fYTvv'
         ><svg
