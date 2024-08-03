@@ -1,7 +1,10 @@
 ---
+import { allPlaylists, songs } from '@/lib/data'
 import Layout from '../../layouts/Layout.astro'
 import { CardPlayButton } from '@/components/CardPlayButton'
-import { allPlaylists, songs } from '@/lib/data'
+import ShowLikeIcon from '@/components/ShowLikeIcon'
+import Options from '@/icons/Options.astro'
+import RecentItem from '@/components/RecentItem.astro'
 import { MusicsTable } from '@/components/MusicsTable'
 
 const { id } = Astro.params
@@ -19,7 +22,9 @@ const color = playlist?.color.accent
     <!-- <PageHeader /> -->
 
     <header class='flex flex-row gap-8 px-6 mt-12 pt-8'>
-      <picture class='aspect-square w-52 h-52 flex-none'>
+      <picture
+        class='aspect-square w-40 h-40 md:w-44 md:h-44 lg:w-56 lg:h-56 flex-none'
+      >
         <img
           src={playlist?.cover}
           alt={`Cover of ${playlist?.title}`}
@@ -29,10 +34,10 @@ const color = playlist?.color.accent
       </picture>
 
       <div class='flex flex-col justify-between'>
-        <h2 class='flex flex-1 items-end'>Playlist</h2>
+        <h2 class='flex flex-1 items-end font-medium'>Album</h2>
         <div>
           <h1
-            class='md:text-3xl lg:text-7xl text-2xl font-bold block text-white'
+            class='text-2xl md:text-4xl lg:text-5xl xl:text-8xl [text-wrap:balance] font-["CircularStdVariable"] font-bold block text-white'
           >
             <span transition:name=`playlist ${playlist?.id} title`>
               {playlist?.title}
@@ -40,28 +45,58 @@ const color = playlist?.color.accent
           </h1>
         </div>
 
-        <div class='flex-1 flex items-end'>
+        <div class='flex items-end mt-2'>
           <div class='text-sm text-gray-300 font-normal'>
             <div transition:name=`playlist ${playlist?.id} artists`>
-              <span>{playlist?.artists.join(', ')}</span>
+              <span class='text-white font-bold'>{playlist?.artists[0]}</span>
+              •
+              <span class='tracking-tighter text-base'
+                >{playlist?.releaseYear}</span
+              >
+              •
+              <span class='tracking-tighter text-base'
+                >{playListSongs.length} songs</span
+              >
+              ,
+              <span class='tracking-tighter text-base'
+                >{playlist?.duration}</span
+              >
             </div>
-            <p class='mt-1'>
-              <span class='text-white'>{playListSongs.length} canciones</span>,
-              3 h aproximadamente
-            </p>
           </div>
         </div>
       </div>
     </header>
 
-    <div class='pl-6 pt-6'>
-      <CardPlayButton client:load id={id} size='large' />
+    <div class='[background:var(--gradient-playlist)] mt-4'>
+      <div class='px-6 pt-4 flex items-center justify-between'>
+        <div class='flex items-center gap-7'>
+          <CardPlayButton client:load id={id} size='large' />
+          <ShowLikeIcon width={32} height={32} client:load />
+          <Options title={playlist?.title} />
+        </div>
+        <RecentItem title='List' isActiveDisable={true} isHoverDisable={true} />
+      </div>
+
+      <div class='relative z-10 px-6 pt-4'></div>
+
+      <section class='px-6'>
+        <MusicsTable songs={playListSongs} client:load />
+      </section>
     </div>
-
-    <div class='relative z-10 px-6 pt-10'></div>
-
-    <section class='p-6'>
-      <MusicsTable songs={playListSongs} client:load />
-    </section>
   </div>
+  <footer class='px-6 py-14 text-table-text text-sm'>
+    <span
+      >{playlist?.releaseMonth}
+      {playlist?.releaseDay}, {playlist?.releaseYear}</span
+    >
+    <p>
+      <a
+        class='text-table-text text-xs no-underline active:text-table-text visited:text-table-text hover:text-table-text'
+        href='https://github.com/abrahamgalue'
+        target='_blank'
+      >
+        Made with ❤️ by <span class='text-white'>Abraham Galue</span></a
+      >
+    </p>
+  </footer>
 </Layout>
