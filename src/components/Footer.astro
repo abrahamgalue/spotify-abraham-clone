@@ -1,0 +1,25 @@
+---
+interface Props {
+  releaseMonth?: string
+  releaseDay?: string
+  releaseYear?: string
+}
+
+const { releaseMonth, releaseDay, releaseYear } = Astro.props
+---
+
+<footer class='px-6 py-14 text-table-text text-sm'>
+  <span
+    >{releaseMonth}
+    {releaseDay}, {releaseYear}</span
+  >
+  <p>
+    <a
+      class='text-table-text text-xs no-underline active:text-table-text visited:text-table-text hover:text-table-text'
+      href='https://github.com/abrahamgalue'
+      target='_blank'
+    >
+      Made with ❤️ by <span class='text-white'>Abraham Galue</span></a
+    >
+  </p>
+</footer>
