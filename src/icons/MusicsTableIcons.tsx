@@ -4,6 +4,7 @@ export const TimeIcon = () => (
     height='16'
     width='16'
     aria-hidden='true'
+    aria-label='Duration'
     viewBox='0 0 16 16'
     fill='currentColor'
   >
@@ -18,7 +19,7 @@ export const EqualiserIcon = ({ className }: { className: string }) => {
       className={className}
       width='14'
       height='14'
-      alt='Equaliser Icon'
+      alt='Equaliser'
       src='https://open.spotifycdn.com/cdn/images/equaliser-animated-green.f5eb96f2.gif'
     />
   )
