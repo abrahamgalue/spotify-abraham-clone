@@ -1,5 +1,5 @@
 ---
-import SideMenuItem from './SideMenuItem.astro'
+import MenuItem from './MenuItem.astro'
 import HomeIcon from '@/icons/Home.astro'
 import Search from '@/icons/Search.astro'
 import SearchEmpty from '@/icons/SearchEmpty.astro'
@@ -7,10 +7,10 @@ import SideLibraryItem from './SideLibraryItem.astro'
 import LibraryItem from './LibraryItem.astro'
 import RoundedBtn from './RoundedBtn.astro'
 import More from '@/icons/More.astro'
-import SideMenuFilters from './SideMenuFilters.astro'
-import SideMenuSearch from './SideMenuSearch.astro'
+import MenuFilters from './MenuFilters.astro'
+import MenuSearch from './MenuSearch.astro'
 import RecentItem from './RecentItem.astro'
-import SideMenuCard from './SideMenuCard.astro'
+import MenuCard from './MenuCard.astro'
 
 import { playlists } from '@/lib/data'
 
@@ -20,12 +20,12 @@ const currentURL = Astro.url.searchParams.get('q')
 <nav class='flex flex-col flex-1 gap-2 overflow-y-auto'>
   <div class='bg-secondary-bg rounded-lg p-2'>
     <ul>
-      <SideMenuItem href='/'>
+      <MenuItem href='/'>
         <HomeIcon />
         Home
-      </SideMenuItem>
+      </MenuItem>
 
-      <SideMenuItem href='/?q=search'>
+      <MenuItem href='/?q=search'>
         {
           currentURL !== null ? (
             <SearchEmpty />
@@ -34,7 +34,7 @@ const currentURL = Astro.url.searchParams.get('q')
           )
         }
         Search
-      </SideMenuItem>
+      </MenuItem>
     </ul>
   </div>
 
@@ -46,20 +46,20 @@ const currentURL = Astro.url.searchParams.get('q')
           <More />
         </RoundedBtn>
       </SideLibraryItem>
-      <SideMenuFilters>
+      <MenuFilters>
         <p slot='playlist'>Playlist</p>
         <p slot='albums'>Albums</p>
         <p slot='artists'>Artists</p>
-      </SideMenuFilters>
+      </MenuFilters>
 
-      <SideMenuSearch>
+      <MenuSearch>
         <RoundedBtn title='Search in Your Library'>
           <Search width='16' height='16' />
         </RoundedBtn>
         <RecentItem />
-      </SideMenuSearch>
+      </MenuSearch>
 
-      {playlists.map(playlist => <SideMenuCard playlist={playlist} />)}
+      {playlists.map(playlist => <MenuCard playlist={playlist} />)}
     </ul>
   </div>
 </nav>

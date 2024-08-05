@@ -1,0 +1,22 @@
+---
+import { CardPlayButton } from '@/components/CardPlayButton'
+import ShowLikeIcon from '@/components/ShowLikeIcon'
+import Options from '@/icons/Options.astro'
+import RecentItem from '@/components/RecentItem.astro'
+
+interface Props {
+  id: string | number
+  title: string
+}
+
+const { id, title } = Astro.props
+---
+
+<div class='px-6 pt-4 flex items-center justify-between'>
+  <div class='flex items-center gap-7'>
+    <CardPlayButton client:load id={id} size='large' />
+    <ShowLikeIcon width={32} height={32} client:load />
+    <Options title={title} />
+  </div>
+  <RecentItem title='List' isActiveDisable={true} isHoverDisable={true} />
+</div>

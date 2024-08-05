@@ -1,0 +1,28 @@
+---
+import { type Song } from '@/lib/data'
+import Title from '@/components/Title.astro'
+import Information from '@/components/Information.astro'
+
+interface Props {
+  title: string
+  playlistID: string | number
+  artist: string
+  releaseYear: string
+  playListSongs: Song[]
+  duration: string
+}
+
+const { title, playlistID, artist, releaseYear, playListSongs, duration } =
+  Astro.props
+---
+
+<div class='flex flex-col justify-between'>
+  <Title title={title} playlistID={playlistID} />
+  <Information
+    playlistID={playlistID}
+    artist={artist}
+    releaseYear={releaseYear}
+    playListSongs={playListSongs}
+    duration={duration}
+  />
+</div>

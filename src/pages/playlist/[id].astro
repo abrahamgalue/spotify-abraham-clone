@@ -1,10 +1,8 @@
 ---
 import { allPlaylists, songs, type Playlist } from '@/lib/data'
 import Layout from '../../layouts/Layout.astro'
-import { CardPlayButton } from '@/components/CardPlayButton'
-import ShowLikeIcon from '@/components/ShowLikeIcon'
-import Options from '@/icons/Options.astro'
-import RecentItem from '@/components/RecentItem.astro'
+import PlayListHeader from '@/components/PlayListHeader.astro'
+import BtnsContainer from '@/components/BtnsContainer.astro'
 import { MusicsTable } from '@/components/MusicsTable'
 import Footer from '@/components/Footer.astro'
 
@@ -31,67 +29,25 @@ const {
     id='playlist-container'
     class=`bg-gradient-to-b ${color} relative flex flex-col overflow-x-hidden`
   >
-    <!-- <PageHeader /> -->
-
-    <header class='flex flex-row gap-8 px-6 mt-12 pt-8'>
-      <picture
-        class='aspect-square w-40 h-40 md:w-44 md:h-44 lg:w-56 lg:h-56 flex-none'
-      >
-        <img
-          src={cover}
-          alt={`Cover of ${title}`}
-          class='object-cover w-full h-full shadow-[0_4px_60px_rgba(0,0,0,0.5)] rounded-md'
-          transition:name=`playlist ${playlistID} image`
-        />
-      </picture>
-
-      <div class='flex flex-col justify-between'>
-        <h2 class='flex flex-1 items-end font-medium'>Album</h2>
-        <div>
-          <h1
-            class='text-2xl md:text-4xl lg:text-5xl xl:text-8xl [text-wrap:balance] font-["CircularStdVariable"] font-bold block text-white'
-          >
-            <span transition:name=`playlist ${playlistID} title`>
-              {title}
-            </span>
-          </h1>
-        </div>
-
-        <div class='flex items-end mt-2'>
-          <div class='text-sm text-gray-300 font-normal'>
-            <div transition:name=`playlist ${playlistID} artists`>
-              <span class='text-white font-bold'>{artists[0]}</span>
-              •
-              <span class='tracking-tighter text-base'>{releaseYear}</span>
-              •
-              <span class='tracking-tighter text-base'
-                >{playListSongs.length} songs</span
-              >
-              ,
-              <span class='tracking-tighter text-base'>{duration}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <PlayListHeader
+      cover={cover}
+      title={title}
+      playlistID={playlistID}
+      artist={artists[0]}
+      releaseYear={releaseYear}
+      playListSongs={playListSongs}
+      duration={duration}
+    />
 
     <div class='[background:var(--gradient-playlist)] mt-4'>
-      <div class='px-6 pt-4 flex items-center justify-between'>
-        <div class='flex items-center gap-7'>
-          <CardPlayButton client:load id={id} size='large' />
-          <ShowLikeIcon width={32} height={32} client:load />
-          <Options title={title} />
-        </div>
-        <RecentItem title='List' isActiveDisable={true} isHoverDisable={true} />
-      </div>
+      <BtnsContainer id={playlistID} title={title} />
 
-      <div class='relative z-10 px-6 pt-4'></div>
-
-      <section class='px-6'>
+      <section class='px-6 pt-4'>
         <MusicsTable songs={playListSongs} client:load />
       </section>
     </div>
   </div>
+
   <Footer
     releaseDay={releaseDay}
     releaseMonth={releaseMonth}

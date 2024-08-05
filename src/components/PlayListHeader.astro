@@ -1,0 +1,37 @@
+---
+import { type Song } from '@/lib/data'
+import Picture from '@/components/Picture.astro'
+import Description from '@/components/Description.astro'
+
+interface Props {
+  cover: string
+  title: string
+  playlistID: string | number
+  artist: string
+  releaseYear: string
+  playListSongs: Song[]
+  duration: string
+}
+
+const {
+  cover,
+  title,
+  playlistID,
+  artist,
+  releaseYear,
+  playListSongs,
+  duration,
+} = Astro.props
+---
+
+<header class='flex flex-row gap-8 px-6 mt-12 pt-8'>
+  <Picture cover={cover} title={title} playlistID={playlistID} />
+  <Description
+    title={title}
+    playlistID={playlistID}
+    artist={artist}
+    releaseYear={releaseYear}
+    playListSongs={playListSongs}
+    duration={duration}
+  />
+</header>

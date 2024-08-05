@@ -20,7 +20,12 @@ const {
 
 <div title={title} class='flex items-center'>
   <span
-    class=`${disableHover} ${scale ? 'hover:scale-110' : ''} hover:cursor-pointer ${bgColor} text-table-text ${padding} transition-colors hover:text-white rounded-full ${activeBgColor}`
+    class:list={[
+      `hover:cursor-pointer text-table-text transition-colors hover:text-white rounded-full ${disableHover} ${bgColor} ${padding} ${activeBgColor}`,
+      {
+        'hover:scale-110': scale,
+      },
+    ]}
   >
     <slot />
   </span>

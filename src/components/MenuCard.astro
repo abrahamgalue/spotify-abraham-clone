@@ -15,7 +15,12 @@ const currentId = Astro.url.pathname.split('/playlist/').pop()
 
 <a
   href={`/playlist/${id}`}
-  class=`playlist-item flex relative p-2 overflow-hidden items-center gap-3 rounded-md hover:bg-[#393939] active:bg-black ${currentId == id ? 'bg-[#232323]' : ''}`
+  class:list={[
+    `playlist-item flex relative p-2 overflow-hidden items-center gap-3 rounded-md hover:bg-[#393939] active:bg-black`,
+    {
+      'bg-[#232323]': currentId == id,
+    },
+  ]}
 >
   <picture class='h-12 w-12 flex-none'>
     <img

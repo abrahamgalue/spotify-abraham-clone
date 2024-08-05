@@ -1,0 +1,8 @@
+---
+import { playlists } from '@/lib/data'
+import PlayListItemCard from '@/components/PlayListItemCard.astro'
+---
+
+<div class='flex flex-wrap mt-6 gap-2'>
+  {playlists.map(playlist => <PlayListItemCard playlist={playlist} />)}
+</div>

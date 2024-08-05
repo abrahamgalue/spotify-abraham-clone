@@ -1,0 +1,29 @@
+---
+import { type Song } from '@/lib/data'
+
+interface Props {
+  playlistID: string | number
+  artist: string
+  releaseYear: string
+  playListSongs: Song[]
+  duration: string
+}
+
+const { playlistID, artist, releaseYear, playListSongs, duration } = Astro.props
+---
+
+<div class='flex items-end mt-2'>
+  <div class='text-sm text-gray-300 font-normal'>
+    <div transition:name=`playlist ${playlistID} artists`>
+      <span class='text-white font-bold'>{artist}</span>
+      •
+      <span class='tracking-tighter text-base'>{releaseYear}</span>
+      •
+      <span class='tracking-tighter text-base'
+        >{playListSongs.length} songs</span
+      >
+      ,
+      <span class='tracking-tighter text-base'>{duration}</span>
+    </div>
+  </div>
+</div>

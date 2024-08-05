@@ -1,5 +1,5 @@
-import { create } from 'zustand'
 import { type Playlist, type Song } from '@/lib/data.ts'
+import { create } from 'zustand'
 
 export interface CurrentMusic {
   playlist: Playlist | null
